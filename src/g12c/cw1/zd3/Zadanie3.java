@@ -1,4 +1,4 @@
-package g12c.cw1.zd2;
+package g12c.cw1.zd3;
 
 import java.util.Scanner;
 
