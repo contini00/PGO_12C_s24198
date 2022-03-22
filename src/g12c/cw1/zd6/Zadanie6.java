@@ -15,7 +15,7 @@ public class Zadanie6 {
 
             randomowaLista[i] = (int)(2+Math.random()*10)*50;
         }
-        
+
     sort(randomowaLista);
 
     }
