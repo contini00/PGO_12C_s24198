@@ -8,13 +8,23 @@ public class Adress {
     private int house;
     private int flat;
 
+    @Override
+    public String toString() {
+        return "Address{" +
+                "country='" + country + '\'' +
+                ", city='" + city + '\'' +
+                ", street='" + street + '\'' +
+                ", house=" + house +
+                ", flat=" + flat +
+                '}';
+    }
     public String getCountry() {
         return country;
     }
-    public void setCountry(String country) throws IllegalAccessException {
+    public void setCountry(String country) {
         if(country == null || country.isEmpty())
         {
-            throw new IllegalAccessException("Country can't be empty");
+            throw new RuntimeException("Country can't be empty");
         }
         this.country = country;
     }
@@ -23,10 +33,10 @@ public class Adress {
     public String getCity() {
         return city;
     }
-    public void setCity(String city) throws IllegalAccessException {
+    public void setCity(String city)  {
         if(city== null || city.isEmpty())
         {
-            throw new IllegalAccessException("City can't be empty");
+            throw new RuntimeException("City can't be empty");
         }
         this.city = city;
     }
@@ -35,10 +45,10 @@ public class Adress {
     public String getStreet() {
         return street;
     }
-    public void setStreet(String street) throws IllegalAccessException {
+    public void setStreet(String street) {
         if(street == null || street.isEmpty())
         {
-            throw new IllegalAccessException("Street can't be empty");
+            throw new RuntimeException("Street can't be empty");
         }
         this.street = street;
     }
@@ -47,10 +57,10 @@ public class Adress {
     public int getHouse() {
         return house;
     }
-    public void setHouse(int house) throws IllegalAccessException {
+    public void setHouse(int house)  {
         if(house == 0)
         {
-            throw new IllegalAccessException("House can't be 0");
+            throw new RuntimeException("House can't be 0");
         }
         this.house = house;
     }
@@ -59,15 +69,21 @@ public class Adress {
     public int getFlat() {
         return flat;
     }
-    public void setFlat(int flat) throws IllegalAccessException {
+    public void setFlat(int flat) {
         if(flat == 0)
         {
-            throw new IllegalAccessException("Flat can't be 0");
+            throw new RuntimeException("Flat can't be 0");
         }
         this.flat = flat;
     }
 
-
+    public Adress(String country, String city, String street, int house, int flat) {
+        this.country = country;
+        this.city = city;
+        this.street = street;
+        this.house = house;
+        this.flat = flat;
+    }
 
 
 }

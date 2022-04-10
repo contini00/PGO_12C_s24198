@@ -43,11 +43,7 @@ public class Book {
     }
     public void setId(Long id)  {
         if(id == null){
-            try {
-                throw new IllegalAccessException("Id can't be empty");
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
+                throw new RuntimeException("Id can't be empty");
         }
         this.id = id;
     }
@@ -58,11 +54,7 @@ public class Book {
     }
     public void setName(String name) {
         if(name == null){
-            try {
-                throw new IllegalAccessException ("Name can't be empty");
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
+                throw new RuntimeException ("Name can't be empty");
         }
         this.name = name;
     }
@@ -82,9 +74,9 @@ public class Book {
         this.language = language;
     }
 
-    public LocalDate getPublishDate() throws Exception {
+    public LocalDate getPublishDate()  {
         if(publishDate == null){
-            throw new Exception("No data");
+            throw new RuntimeException("No data");
         }
         return publishDate;
     }
@@ -120,10 +112,10 @@ public class Book {
         booksList.add(this);
     }
 
-    public Book(Long id, String name, Genre genre, Lang language,List<Person> authors){
+    public Book(Long id, String name, Genre genre, Lang language,List<Person> authors) {
         this.id = id;
         this.name = name;
-        this. genre = genre;
+        this.genre = genre;
         this.language = language;
         this.publishDate = publishDate;
         this.age = ChronoUnit.YEARS.between(this.publishDate, LocalDate.now());
@@ -131,6 +123,26 @@ public class Book {
         this.authors = authors;
         this.isAvailable = true;
         booksList.add(this);
+    }
+
+    public void borrowBook(Person borrowingNewPerson){
+        if(isAvailable) {
+            borrowing = borrowingNewPerson;
+            isAvailable = false;
+            borrowCount++;
+        }else {
+            throw new RuntimeException("You can not borrow this book, it is already borrowed");
+        }
+    }
+
+    public void returnBook() {
+        if (!isAvailable) {
+            isAvailable = true;
+            borrowing = null;
+        } else{
+            throw new RuntimeException("This book was not borrowed");
+        }
+    }
 
 
 
