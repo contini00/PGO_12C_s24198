@@ -2,6 +2,7 @@ package g12c.cw2.zd5;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -9,27 +10,33 @@ import java.util.Set;
 
 public class Book {
 
-    private static Set<Book> extent = new HashSet<>();
     //Dane
     private Long id;
     private String name;
     private Genre genre;
     private Lang language;
     private LocalDate publishDate;
-    private List<Integer> borrowCount;
-    private boolean isAvailable = true;
+    private long age;
+    private int borrowCount;
+    private List<Person> authors;
+    private boolean isAvailable;
+    private Person borrowing;
 
-    public Book (Long id, String name, Genre genre, Lang language, LocalDate publishDate, int borrowCount, boolean isAvailable){
-        setId(id);
-        setName(name);
-        setGenre(genre);
-        setLanguage(language);
-        setPublishDate(publishDate);
-        this.borrowCount = new ArrayList<>();
-        extent.add(this);
+    @Override
+    public String toString(){
+        return "Book{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", genre=" + genre +
+                ", language=" + language +
+                ", publishDate=" + publishDate +
+                ", age=" + age +
+                ", borrowCount=" + borrowCount +
+                ", isAvailable=" + isAvailable +
+                ", authors=" + authors +
+                ", borrowing=" + borrowing +
+                '}';
     }
-
-
 
     public Long getId(){
         return id;
@@ -85,17 +92,45 @@ public class Book {
         this.publishDate = publishDate;
     }
 
-
-
-
-
-
-    public Period getAge(){
+    /*public Period getAge(){
         return Period.between(publishDate,LocalDate.now());
     }
+    */
 
+    static List<Book> booksList = new ArrayList<>();
 
+    public static void addNewBook(Book book) {
+        booksList.add(book);
+    }
 
+    public static List<Book> getBooksList(){
+        return booksList;
+    }
+
+    public Book(Long id, String name, Genre genre, Lang language, LocalDate publishDate, List<Person> authors){
+        this.id = id;
+        this.name = name;
+        this. genre = genre;
+        this.language = language;
+        this.publishDate = publishDate;
+        this.age = ChronoUnit.YEARS.between(this.publishDate, LocalDate.now());
+        this.borrowCount = 0;
+        this.authors = authors;
+        this.isAvailable = true;
+        booksList.add(this);
+    }
+
+    public Book(Long id, String name, Genre genre, Lang language,List<Person> authors){
+        this.id = id;
+        this.name = name;
+        this. genre = genre;
+        this.language = language;
+        this.publishDate = publishDate;
+        this.age = ChronoUnit.YEARS.between(this.publishDate, LocalDate.now());
+        this.borrowCount = 0;
+        this.authors = authors;
+        this.isAvailable = true;
+        booksList.add(this);
 
 
 
