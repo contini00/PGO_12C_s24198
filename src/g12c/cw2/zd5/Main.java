@@ -18,18 +18,12 @@ public class Main {
 
         System.out.println(Book.getBooksList());
 
-        System.out.println("------------");
-
         book1.borrowBook(person1);
 
         System.out.println(Book.getBooksList());
 
-        System.out.println("------------");
-
         book1.returnBook();
         System.out.println(Book.getBooksList());
-
-        System.out.println("-------------");
 
         book1.borrowBook(person1);
 
