@@ -25,7 +25,7 @@ public class Person {
 
     public void setName(String name) {
         if (name == null || name.isEmpty()) {
-            throw new RuntimeException("Name cannot be empty.");
+            throw new RuntimeException("You cannot leave name empty.");
         }
         this.name = name;
     }
@@ -36,7 +36,7 @@ public class Person {
 
     public void setSurname(String surname) {
         if (surname == null || surname.isEmpty()) {
-            throw new RuntimeException("Surname cannot be empty.");
+            throw new RuntimeException("You cannot leave surname empty.");
         }
         this.surname = surname;
     }
@@ -65,14 +65,14 @@ public class Person {
 
     public void MakeOrder() {
         if (this.currentCart != null) {
-            throw new RuntimeException("You have one cart already. Don't be greedy.");
+            throw new RuntimeException("You can only have one cart.");
         }
         this.currentCart = new ShoppingCart();
     }
 
     public void addToCart(Products product) {
         if (!product.isAvailable()) {
-            throw new RuntimeException("Product isn't available.");
+            throw new RuntimeException("Product you choose isn't available.");
         }
         this.currentCart.products.add(product);
         product.decreasePiecesAvailable();
@@ -80,7 +80,7 @@ public class Person {
 
     public void removeFromCart(Products product) {
         if (product == null || !this.Cart().products.contains(product)) {
-            throw new RuntimeException("There is no such product in your cart");
+            throw new RuntimeException("You donnot have this product in your cart");
         }
         product.increasePiecesAvailable();
         this.Cart().products.remove(product);
@@ -88,7 +88,7 @@ public class Person {
 
     public void removeAll() {
         if (this.Cart().products == null || this.Cart().products.isEmpty()) {
-            throw new RuntimeException("Your cart is already empty.");
+            throw new RuntimeException("You have emmpty cart.");
         }
         for (int i = 0; i < this.Cart().products.size(); i++) {
             this.Cart().products.get(i).increasePiecesAvailable();
@@ -115,7 +115,7 @@ public class Person {
                 this.history.add(currentCart);
                 this.currentCart = null;
             } else {
-                throw new RuntimeException("Insufficient funds.");
+                throw new RuntimeException("You donnot have enough money.");
             }
         } else {
             throw new RuntimeException("Shopping cart is empty.");
