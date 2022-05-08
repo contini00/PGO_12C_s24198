@@ -12,7 +12,7 @@ package g12c.cw3_dzialajace.zdanie2;
             Products fridge = new Products("Fridge", ProductType.Electronic, 200, 20);
             Products playStation = new Products("Play Station", ProductType.Electronic, 500, 40);
             Products dvd = new Products("Movie Dvd", ProductType.Entertainment, 25, 150);
-            Products ticket = new Products("Concert Tickets", ProductType.Entertainment, 90, 100);
+            Products ticket = new Products("Concert Tickets", ProductType.Entertainment, 90, 110);
 
             Storage storage_1 = new Storage(1);
             Storage storage_2 = new Storage(5);
