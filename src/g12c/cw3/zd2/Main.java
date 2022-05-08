@@ -8,70 +8,57 @@ package g12c.cw3.zd2;
             Person Wojciech = new Person ("Wojciech", "Wojciech", 10000, 350);
 
             Products water = new Products("Water", ProductType.Consumable, 5, 500);
-            Products fridge = new Products("Fridge", ProductType.Electronic, 200, 10);
-            Products playStation = new Products("Play Station", ProductType.Electronic, 500, 10);
-            Products juice = new Products("Apple Juice", ProductType.Consumable, 5, 80);
-            Products tickets = new Products("Cinema Tickets", ProductType.Entertainment, 20, 50);
-            Products netflix = new Products("Netflix Monthly Subscription", ProductType.Entertainment, 30, 1000);
+            Products juice = new Products("Apple Juice", ProductType.Consumable, 10, 100);
+            Products fridge = new Products("Fridge", ProductType.Electronic, 200, 20);
+            Products playStation = new Products("Play Station", ProductType.Electronic, 500, 40);
+            Products dvd = new Products("Movie Dvd", ProductType.Entertainment, 25, 150);
+            Products ticket = new Products("Concert Tickets", ProductType.Entertainment, 90, 100);
 
-            Storage storage_1 = new Storage(2);
+            Storage storage_1 = new Storage(1);
             Storage storage_2 = new Storage(5);
 
-            //dodanie produktów do magazynu
-            tv.setStorage(storage_1);
-            microwave.setStorage(storage_1);
-            candybar.setStorage(storage_2);
-            sandwich.setStorage(storage_2);
+            water.setStorage(storage_1);
+            juice.setStorage(storage_1);
+            fridge.setStorage(storage_2);
+            playStation.setStorage(storage_2);
 
-            //sprawdzenie czasów dostawy
-            System.out.println("Czas dostawy TV: " + tv.getDeliveryTime());
-            System.out.println("Czas dostawy batonika: " + candybar.getDeliveryTime());
-            System.out.println("Czas dostawy biletów: " + tickets.getDeliveryTime());
+            System.out.println("Czas dostawy wody: " + water.getDeliveryTime());
+            System.out.println("Czas dostawy playStation: " + playStation.getDeliveryTime());
+            System.out.println("Czas dostawy płyt dvd: " + dvd.getDeliveryTime());
 
+            Products computer = new Products("Komputer stacjonarny", ProductType.Electronic, 1299, 4, storage_2);
 
-            //inicjowanie nowego produktu z dodaniem do magazynu
-            Products iphone = new Products("Apple iPhone", ProductType.Electronic, 999, 2, storage_1);
+            Wojciech.MakeOrder();
+            Wojciech.addToCart(water);
+            Wojciech.addToCart(playStation);
+            Wojciech.addToCart(dvd);
 
-            Janek.MakeOrder();
-            Janek.addToCart(tv);
-            Janek.addToCart(candybar);
-            Janek.addToCart(netflix);
+            System.out.println("Twoja zawartość koszyka to: " + Wojciech.Cart());
 
-            //sprawdzenie zawartości koszyka
-            System.out.println("Zawartość koszyka: " + Janek.Cart());
+            Wojciech.removeFromCart(water);
 
-            //usunięcie produktu
-            Janek.removeFromCart(candybar);
-
-            //ponowne sprawdzenie zawartości koszyka
-            System.out.println("Zawartość koszyka po usunięciu: " + Janek.Cart());
+            System.out.println("Twoja zawartość koszyka po usunięciu to: " + Wojciech.Cart());
 
             try {
-                Janek.BuyByCard();
+                Wojciech.BuyByCard();
             }
             catch (RuntimeException e) {
                 System.out.println(e);
             }
 
-            //brak środków, więc kupujemy w gotówce
-            Janek.BuyInCash();
+            Wojciech.BuyInCash();
 
-            //sprawdzamy ilość dostępnych pieniędzy i czy koszyk trafił do historii
-            System.out.println(Janek);
+            System.out.println(Wojciech);
 
-            //sprawdzamy ilość dostępnych produktów po zakupie
-            System.out.println("Ilość dostępnych TV (było 5): " + tv.getQuantity());
-            System.out.println("Ilość dostępnych subskrypcji (było 1000): " + netflix.getQuantity());
+            System.out.println("Ilość dostępnej wody: " + water.getQuantity());
+            System.out.println("Ilość dostępnych płyt dvd: " + dvd.getQuantity());
 
-            //zwiększamy ilość produktu
-            tv.IncreaseQuantity(5);
-            System.out.println("Ilość dostępnych TV po zwiększeniu (było 4): " + tv.getQuantity());
+            water.IncreaseQuantity(100);
+            System.out.println("Ilość dostępnych butelek wody po powiększeniu ilości: " + water.getQuantity());
 
-
-            //tworzymy nowy koszyk i sprawdzamy ID koszyków
-            Janek.MakeOrder();
-            System.out.println("ID pierwszego koszyka: " + Janek.getHistory().get(0).getId());
-            System.out.println("ID drugiego koszyka: " + Janek.Cart().getId());
+            Wojciech.MakeOrder();
+            System.out.println("ID pierwszego koszyka: " + Wojciech.getHistory().get(0).getId());
+            System.out.println("ID drugiego koszyka: " + Wojciech.Cart().getId());
 
 
         }
