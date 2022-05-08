@@ -19,6 +19,7 @@ public class Person {
         setMoneyOnCard(moneyCard);
     }
 
+
     public String getName() {
         return name;
     }
@@ -29,6 +30,7 @@ public class Person {
         }
         this.name = name;
     }
+
 
     public String getSurname() {
         return surname;
@@ -41,6 +43,7 @@ public class Person {
         this.surname = surname;
     }
 
+
     public double getMoneyInCash() {
         return moneyInCash;
     }
@@ -51,6 +54,7 @@ public class Person {
         }
         this.moneyInCash = moneyInCash;
     }
+
 
     public double getMoneyOnCard() {
         return moneyOnCard;
@@ -63,12 +67,14 @@ public class Person {
         this.moneyOnCard = moneyOnCard;
     }
 
+
     public void MakeOrder() {
         if (this.currentCart != null) {
             throw new RuntimeException("You can only have one cart.");
         }
         this.currentCart = new ShoppingCart();
     }
+
 
     public void addToCart(Products product) {
         if (!product.isAvailable()) {
@@ -78,6 +84,7 @@ public class Person {
         product.decreasePiecesAvailable();
     }
 
+    
     public void removeFromCart(Products product) {
         if (product == null || !this.Cart().products.contains(product)) {
             throw new RuntimeException("You donnot have this product in your cart");

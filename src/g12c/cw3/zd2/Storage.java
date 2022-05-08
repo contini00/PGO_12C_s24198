@@ -12,6 +12,7 @@ public class Storage {
         setDeliveryTime(deliveryTime);
     }
 
+
     public int getDeliveryTime() {
         return deliveryTime;
     }
@@ -22,6 +23,7 @@ public class Storage {
         }
         this.deliveryTime = deliveryTime;
     }
+
 
     public List<Products> getStoredProducts() {
         return storedProducts;

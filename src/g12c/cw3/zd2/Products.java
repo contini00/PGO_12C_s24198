@@ -58,6 +58,7 @@ public class Products {
         this.price = price;
     }
 
+
     public Storage getStorage() {
         return storage;
     }
@@ -71,6 +72,7 @@ public class Products {
         storage.setStoredProducts(this);
     }
 
+
     public int getDeliveryTime() {
         return deliveryTime;
     }
@@ -79,6 +81,7 @@ public class Products {
         this.deliveryTime = deliveryTime;
     }
 
+
     public boolean isAvailable() {
         if (this.piecesAvailable > 0 && this.quantity > 0) {
             return true;
@@ -86,6 +89,7 @@ public class Products {
             return false;
         }
     }
+
 
     public int getQuantity() {
         return quantity;
@@ -98,6 +102,7 @@ public class Products {
         this.quantity = quantity;
         this.piecesAvailable = quantity;
     }
+
 
     public int getPiecesAvailable() {
         return piecesAvailable;
@@ -114,6 +119,7 @@ public class Products {
     public void decreasePiecesAvailable() {
         this.piecesAvailable--;
     }
+
 
     public void Sell() {
         if (isAvailable()) {
