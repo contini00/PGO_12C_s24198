@@ -1,4 +1,4 @@
-package g12c.cw3.zd2;
+package g12c.cw3.zdanie2;
 
 
     public class Main {
