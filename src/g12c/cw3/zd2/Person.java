@@ -84,7 +84,7 @@ public class Person {
         product.decreasePiecesAvailable();
     }
 
-    
+
     public void removeFromCart(Products product) {
         if (product == null || !this.Cart().products.contains(product)) {
             throw new RuntimeException("You donnot have this product in your cart");
