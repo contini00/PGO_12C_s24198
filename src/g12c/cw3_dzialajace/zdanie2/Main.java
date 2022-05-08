@@ -5,14 +5,14 @@ package g12c.cw3_dzialajace.zdanie2;
 
         public static void main(String[] args) {
 
-            Person Wojciech = new Person ("Wojciech", "Wojciech", 10000, 350);
+            Person Wojciech = new Person ("Wojciech", "Wojciech", 100, 5500);
 
             Products water = new Products("Water", ProductType.Consumable, 5, 500);
             Products juice = new Products("Apple Juice", ProductType.Consumable, 10, 100);
             Products fridge = new Products("Fridge", ProductType.Electronic, 200, 20);
             Products playStation = new Products("Play Station", ProductType.Electronic, 500, 40);
             Products dvd = new Products("Movie Dvd", ProductType.Entertainment, 25, 150);
-            Products ticket = new Products("Concert Tickets", ProductType.Entertainment, 90, 110);
+            Products ticket = new Products("Theater Tickets", ProductType.Entertainment, 90, 110);
 
             Storage storage_1 = new Storage(1);
             Storage storage_2 = new Storage(5);
