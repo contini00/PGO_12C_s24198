@@ -5,12 +5,12 @@ package g12c.cw3.zd2;
 
         public static void main(String[] args) {
 
-            Person Janek = new Person ("Jan", "Powaga", 1000, 200);
+            Person Wojciech = new Person ("Wojciech", "Wojciech", 10000, 350);
 
-            Products tv = new Products("TV", ProductType.Electronic, 500, 5);
-            Products microwave = new Products("Microwave", ProductType.Electronic, 200, 10);
-            Products candybar = new Products("Candy Bar", ProductType.Consumable, 2, 100);
-            Products sandwich = new Products("PB&J Sandwich", ProductType.Consumable, 5, 80);
+            Products water = new Products("Water", ProductType.Consumable, 5, 500);
+            Products fridge = new Products("Fridge", ProductType.Electronic, 200, 10);
+            Products playStation = new Products("Play Station", ProductType.Electronic, 500, 10);
+            Products juice = new Products("Apple Juice", ProductType.Consumable, 5, 80);
             Products tickets = new Products("Cinema Tickets", ProductType.Entertainment, 20, 50);
             Products netflix = new Products("Netflix Monthly Subscription", ProductType.Entertainment, 30, 1000);
 
