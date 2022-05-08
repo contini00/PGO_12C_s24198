@@ -1,4 +1,4 @@
-package g12c.cw3.zd2;
+package g12c.cw3_dzialajace.zdanie2;
 
 import java.util.ArrayList;
 import java.util.List;
