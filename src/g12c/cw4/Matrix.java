@@ -20,7 +20,7 @@ public class Matrix {
         temp = new int[liczbaWierszy][liczbaKolumn];
     }
 
-    public static void dodajWiersz(int[] wiersz) {
+    public static void insertRow(int[] wiersz) {
         if (wiersz.length != temp[0].length) {
             throw new RuntimeException("Liczba wierszy musi być tożsama z macierzą ");
         }
@@ -34,7 +34,7 @@ public class Matrix {
         nextEmpty++;
     }
 
-    public static Matrix stworz() {
+    public static Matrix create() {
         Matrix m = new Matrix();
         temp = null;
         nextEmpty = 0;
