@@ -4,10 +4,13 @@ public class Ingredient {
     protected String name;
     protected int baseReagent;
     public Ingredient(String name, int baseReagent){
+        this.name = name;
+        this.baseReagent = baseReagent;
 
         setName(name);
         setBaseReagent(baseReagent);
     }
+
 
     public String getName() {
         return name;
@@ -27,7 +30,7 @@ public class Ingredient {
 
     public void setBaseReagent(int baseReagent) {
         if (baseReagent <= 0) {
-            throw new RuntimeException("Price must be higher than 0. ");
+            throw new RuntimeException("");
         }
         this.baseReagent = baseReagent;
     }
