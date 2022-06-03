@@ -1,7 +1,7 @@
 package g12c.cw5.zd2;
 
 public class Liquid extends Ingredient{
-    private int dissolubility;
+    protected int dissolubility;
 
     public Liquid (String name,int baseReagent,int dissolubility) {
         super(name, baseReagent);
@@ -14,7 +14,7 @@ public class Liquid extends Ingredient{
     }
 
     public void setDissolubility(int dissolubility){
-        if(dissolubility < 0 && dissolubility > 100){
+        if(dissolubility < 0 || dissolubility > 100){
             throw new RuntimeException("Parameter must be between 0 and 100");
         }
         this.dissolubility = dissolubility;

@@ -1,7 +1,7 @@
 package g12c.cw5.zd2;
 
 public class Mineral extends Ingredient {
-    private int power;
+    protected int power;
 
     public Mineral (String name, int baseReagent, int power) {
         super(name, baseReagent);
