@@ -19,4 +19,13 @@ public class Mineral extends Ingredient {
         this.power = power;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
+    @Override
+    public int getReagent() {
+        return baseReagent+power;
+    }
+
 }

@@ -15,6 +15,7 @@ public class Water extends Liquid  {
     public void setDistilated(boolean distilated) {
         this.distilated = distilated;
     }
+
     @Override
     public String toString() {
         return name;
