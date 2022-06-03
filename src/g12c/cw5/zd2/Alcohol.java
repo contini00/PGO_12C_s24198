@@ -25,6 +25,6 @@ public class Alcohol extends Liquid{
     }
     @Override
     public int getReagent() {
-        return baseReagent*dissolubility*percentage;
+        return baseReagent-(baseReagent*(percentage/100));
     }
 }

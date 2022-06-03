@@ -26,7 +26,7 @@ public class Liquid extends Ingredient{
     }
     @Override
     public int getReagent(){
-        return baseReagent*dissolubility;
+        return baseReagent*(dissolubility/100);
     }
 
 

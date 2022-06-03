@@ -22,7 +22,11 @@ public class Water extends Liquid  {
     }
     @Override
     public int getReagent() {
-        return baseReagent*dissolubility;
+       if(distilated == false) {
+           return baseReagent/2;
+       }else{
+           return baseReagent;
+       }
     }
 
 

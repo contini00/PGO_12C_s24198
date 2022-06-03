@@ -19,7 +19,7 @@ public class Ingredient {
     public void setName(String name) {
         if(name.isEmpty())
         {
-            throw new RuntimeException("Cannot be empty");
+            throw new RuntimeException("Can not be empty");
         }
         this.name = name;
     }

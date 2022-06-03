@@ -8,14 +8,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-/*
+
         Adress address1 = new Adress("Poland", "Warszawa", "Koszykowa", 3, 309);
 
         Person person1 = new Person("Zbigniew", "Krzesło", LocalDate.of(1989, Month.DECEMBER, 13), address1);
 
         Book book1 = new Book(1L, "Wiedzmin", Genre.Adventure, Lang.Polish, LocalDate.of(1980, Month.SEPTEMBER,30), Collections.singletonList(person1));
         person1.publishBook(2L, "Pan Kleps", Genre.Detective, Lang.English, LocalDate.of(1975, Month.MAY, 12));
-
         System.out.println(Book.getBooksList());
 
         book1.borrowBook(person1);
@@ -29,7 +28,6 @@ public class Main {
 
         System.out.println(Book.getBooksList());
 
-     */
     }
 
 }
