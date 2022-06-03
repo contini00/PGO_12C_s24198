@@ -1,5 +1,6 @@
 package g12c.cw5.zd2;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Elixir {
@@ -11,7 +12,9 @@ public class Elixir {
         this. isCreated = isCreated;
         this.power = power;
     }
-    
-    List<Ingredient> ingredients;
+
+    List<Ingredient> ingredientsList = new ArrayList<>();
+
+    public static void addIngredient()
     public
 }
