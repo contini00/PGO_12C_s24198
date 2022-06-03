@@ -14,7 +14,7 @@ public class Alcohol extends Liquid{
 
     public void setPercentage(int percentage) {
         if(percentage < 0 || percentage > 100 ){
-            throw new RuntimeException("Parameter must be between 0 and 100")
+            throw new RuntimeException("Parameter must be between 0 and 100");
         }
         this.percentage = percentage;
     }

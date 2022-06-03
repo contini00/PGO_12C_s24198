@@ -4,7 +4,7 @@ public class Crystal extends Mineral{
     private int magicPower;
 
     public Crystal (String name, int baseReagent, int dissolubility, int magicPower){
-        super(name, baseReagent, dissolubility)
+        super(name, baseReagent, dissolubility);
         setMagicPower(magicPower);
     }
     public int getMagicPower(){

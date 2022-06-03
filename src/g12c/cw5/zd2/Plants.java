@@ -6,7 +6,7 @@ public class Plants extends Ingredient{
     public Plants (String name, int baseReagent, int toxity){
         super(name, baseReagent);
 
-        setToxity(toxity;
+        setToxity(toxity);
         }
 
     public int getToxity() {
@@ -18,7 +18,7 @@ public class Plants extends Ingredient{
         if(toxity <0) {
             throw new RuntimeException("Parameter must be higher than zero");
         }
-        this.toxity = toxity;
+        this.toxity= toxity;
     }
 
     @Override
