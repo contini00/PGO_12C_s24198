@@ -16,5 +16,15 @@ public class Ore extends Mineral{
     }
 
     @Override
-
+    public String toString() {
+        return name;
+    }
+    @Override
+    public int getReagent() {
+        if(metallic==false){
+            return baseReagent/2;
+        }else {
+            return baseReagent;
+        }
+    }
 }
