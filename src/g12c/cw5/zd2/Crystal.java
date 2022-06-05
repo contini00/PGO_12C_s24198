@@ -3,8 +3,8 @@ package g12c.cw5.zd2;
 public class Crystal extends Mineral{
     private int magicPower;
 
-    public Crystal (String name, int baseReagent, int dissolubility, int magicPower){
-        super(name, baseReagent, dissolubility);
+    public Crystal (String name, int baseReagent, int power, int magicPower){
+        super(name, baseReagent, power);
         setMagicPower(magicPower);
     }
     public int getMagicPower(){
