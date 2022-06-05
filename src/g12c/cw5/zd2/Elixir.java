@@ -30,6 +30,13 @@ public class Elixir {
         this.name = name;
     }
 
+    public Liquid getCatalyst(){
+        return catalyst;
+    }
+    public void setCatalyst(Liquid catalyst){
+        this.catalyst = catalyst;
+    }
+
     void Create() {
         if(isCreated) {
             System.out.println("Elixis was created");
@@ -43,13 +50,25 @@ public class Elixir {
         power /= catalyst.getReagent();
         System.out.println("Power of the created Elixir: " + name + " is | " + power + " |");
     }
-    
 
-    public void addIngredient(Ingredient){
-        if(isCreated == true){
+
+    void addIngredient(Ingredient ingredient){
+        if(isCreated){
             throw new RuntimeException("Elixir has already been created");
         }else {
-            ingredientsList.add(new Ingredient());
+            ingredients.add(ingredient);
         }
     }
+
+    void removeIngredient(Ingredient ingredient) {
+        if(isCreated){
+            throw new RuntimeException("Elixir has already been created");
+        }else {
+            ingredients.remove(ingredient);
+        }
+    }
+
+
+
+
 }
