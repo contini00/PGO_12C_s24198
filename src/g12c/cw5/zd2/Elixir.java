@@ -5,12 +5,16 @@ import java.util.List;
 
 public class Elixir {
     protected String name;
-    private boolean isCreated = false;
-    int power;
+    private boolean isCreated;
+    private int power;
+    private Liquid catalyst;
+    private List<Ingredient> ingredients;
     public Elixir(String name, boolean isCreated, int power){
         this.name = name;
-        this. isCreated = isCreated;
+        this. isCreated = false;
         this.power = power;
+        this.catalyst = catalyst;
+        this.ingredients = new ArrayList<>();
 
         setName(name);
     }
@@ -26,13 +30,26 @@ public class Elixir {
         this.name = name;
     }
 
-    List<Ingredient> ingredientsList = new ArrayList<>();
+    void Create() {
+        if(isCreated) {
+            System.out.println("Elixis was created");
+            return;
+        }
+        isCreated = true;
+        power = 0;
+        for (Ingredient ingredient : ingredients){
+            power += ingredient.getReagent();
+        }
+        power /= catalyst.getReagent();
+        System.out.println("Power of the created Elixir: " + name + " is | " + power + " |");
+    }
+    
 
     public void addIngredient(Ingredient){
         if(isCreated == true){
             throw new RuntimeException("Elixir has already been created");
         }else {
-            ingredientsList.add(new Ingredient())
+            ingredientsList.add(new Ingredient());
         }
     }
 }
