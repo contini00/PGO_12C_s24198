@@ -9,15 +9,17 @@ public class Elixir {
     private int power;
     private Liquid catalyst;
     private List<Ingredient> ingredients;
-    public Elixir(String name, boolean isCreated, int power){
+
+    public Elixir(String name,Liquid catalyst){
         this.name = name;
         this. isCreated = false;
-        this.power = power;
         this.catalyst = catalyst;
         this.ingredients = new ArrayList<>();
 
         setName(name);
     }
+
+
 
     public String getName() {
         return name;
@@ -48,7 +50,7 @@ public class Elixir {
             power += ingredient.getReagent();
         }
         power /= catalyst.getReagent();
-        System.out.println("Power of the created Elixir: " + name + " is | " + power + " |");
+        System.out.println("Power of the created '" + name + "' Elixir is | " + power + " |");
     }
 
 
@@ -66,6 +68,22 @@ public class Elixir {
         }else {
             ingredients.remove(ingredient);
         }
+    }
+
+    public void printIngredientList() {
+        System.out.print("\n");
+        System.out.println("List of ingredient of " + name + "\n");
+        System.out.println("catalyst:");
+        System.out.println(catalyst);
+        System.out.println("\n");
+
+        System.out.println("ingredients:");
+
+        for (Ingredient ingredient : ingredients) {
+            System.out.println(ingredient);
+        }
+
+        System.out.println(" ");
     }
 
 
