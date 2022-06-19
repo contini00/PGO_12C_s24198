@@ -36,6 +36,23 @@ public class main {
         ElixirMixture2.addIngredient(new Crystal("Rubin", 450, 60, 1200));
         ElixirMixture2.Create();
         ElixirMixture2.printIngredientList();
-        
+
+        Alcohol alcohol1 = new Alcohol("Alkohol", 10,100,70);
+        Ore ore = new Ore("Ore", 15, 5, true);
+        Crystal crystal = new Crystal("Crystal", 20, 6, 2);
+        Flower flower = new Flower("Flower", 5, 3);
+        Root root = new Root("Root", 25, 0);
+
+        Elixir elixirPowaga = new Elixir("ELiksikPowaga", alcohol1);
+
+        elixirPowaga.addIngredient(ore);
+        elixirPowaga.addIngredient(crystal);
+        elixirPowaga.addIngredient(flower);
+        elixirPowaga.addIngredient(root);
+        elixirPowaga.removeIngredient(root);
+
+        elixirPowaga.Create();
+        elixirPowaga.printIngredientList();
+
         }
 }
